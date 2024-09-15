@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        button{
+            margin: 10px;
+            padding: 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 1rem;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Please add your comment</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptates porro odit magni tempore, recusandae, quia delectus quas dignissimos excepturi voluptatibus totam et natus error rem dolorem iste exercitationem vero ipsum vitae! Repellat iste commodi consequuntur sapiente sequi praesentium magnam, ullam repellendus delectus placeat. Perferendis inventore sed ipsa quibusdam molestias?</p>
+        <p>Reprehenderit dolorem cupiditate sint doloribus iste sit nobis voluptas tenetur adipisci repudiandae sunt vero ratione minima neque debitis, beatae voluptate fugit, dolore facere vitae quis molestiae exercitationem ipsa. Ducimus quam quasi perspiciatis voluptatem doloremque fugiat ex minima non magni eum commodi, esse ipsum voluptates aspernatur, dignissimos corporis sit iure qui.</p>
+        <p>Ex quae, atque eveniet repellat eos veritatis ut, nam laudantium quidem nesciunt similique magnam quam iste modi porro unde, eligendi vel! Cupiditate dignissimos tempore voluptatem inventore suscipit possimus non ipsum ex eaque incidunt quam sed totam consequuntur, aliquid eum impedit ducimus fugit voluptatum. Porro deleniti asperiores perferendis esse accusamus nemo.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="10"></textarea>
+        <br>
+        <button id="btn-post">Post!</button>
+    </div>
+
+    <script>
+        // step 1: addEventListener to the post button
+        document.getElementById('btn-post').addEventListener('click', function(){
+            // step 2: get the new comment from textarea
+            const commnetBox = document.getElementById('new-comment');
+            const newComment = commnetBox.value;
+            // step 3: clear the textarea
+            commnetBox.value = '';
+            // step 4: set the comment inside the comment container
+            //1. get the comment container
+            //2. create a new paragraph element
+            //3. set its text to the new comment
+            //4. append the paragraph to the comment container
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+
+        })
+    </script>
+</body>
+</html>
+
+
+
