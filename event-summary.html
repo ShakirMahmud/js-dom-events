@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Summary</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        button{
+            padding: 1rem;
+            border: none;
+            background-color: #4CAF50;
+            border-radius: 1rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            margin:1rem;
+        }
+        input{
+            width: 200px;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Final DOM Event Handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <p id="input-text-display">Default input text.</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <button onclick="handleOnClick()">Handle Event by Add onClick Function</button>
+    <button id="event-listener">Handle Event by addEventListener</button>
+    <script>
+        // option-1 
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Handled by function attached on onClick attribute';
+        }
+        // option-2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Handled by addEventListener method';
+        })
+
+        //option-2: recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+            const para = document.getElementById('input-text-display');
+            // para.innerText = `Updated input text: ${inputText}`;
+            para.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+</body>
+</html>
