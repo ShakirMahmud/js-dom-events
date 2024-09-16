@@ -35,7 +35,7 @@
 
     <script>
         
-        document.getElementById('delete-confirm').addEventListener('keyup',function(event){
+        document.getElementById('delete-confirm').addEventListener('keyup',function(event){     //instead of 'keyup' 'input' would be perfect.
             const text = event.target.value;
             const deleteButton = document.getElementById('btn-delete');
             if(text.toLowerCase() === 'delete'){
